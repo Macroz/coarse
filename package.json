@@ -11,6 +11,7 @@
   "dependencies": {
     "coarse": "^0.8.3",
     "parse5": "^5.1.0",
+    "svg-to-pdfkit": "^0.1.7",
     "xmlserializer": "^0.6.1"
   }
 }
