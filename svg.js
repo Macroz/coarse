@@ -1,4 +1,5 @@
 // helpers
+const styleParser = require('style-parser');
 
 function getAttribute(element, attributeName) {
   let value;
