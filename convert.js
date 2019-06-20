@@ -1,23 +1,6 @@
 const parser = require('parse5');
 const styleParser = require('style-parser');
-
-// helpers
-
-function getAttribute(element, attributeName) {
-  let value;
-  element.attrs.forEach(a => {
-    if (a.name === attributeName) {
-      value = a.value;
-    }
-  });
-  return value;
-}
-
-function getStyle(element) {
-  let style = getAttribute(element, "style");
-  style = typeof style === 'string' ? styleParser(style) : {};
-  return style;
-}
+const { getAttibute, getStyle } = require('./svg');
 
 // prewalk the DOM starting from `element`
 // and use `transformer` to replace nodes
