@@ -10,7 +10,7 @@ output-%.pdf : output-%.svg
 	node ./svg2pdf.js $< $@
 
 output-%.svg : input-%.svg
-	node coarse.js $< $@
+	node ./coarse.js $< $@
 
 clean :
 	@rm -f ${OUTPUT_SVG} ${OUTPUT_PDF} *~

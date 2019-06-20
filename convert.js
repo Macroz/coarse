@@ -1,6 +1,6 @@
 const parser = require('parse5');
 const styleParser = require('style-parser');
-const { getAttibute, getStyle } = require('./svg');
+const { getAttribute, getStyle } = require('./svg');
 
 // prewalk the DOM starting from `element`
 // and use `transformer` to replace nodes

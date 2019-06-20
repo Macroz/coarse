@@ -3,18 +3,16 @@
 const fs = require('fs')
 const PdfDoc = require('pdfkit')
 const svg2pdf = require('svg-to-pdfkit')
+const parser = require('parse5')
+const { getAttribute } = require('./svg')
 
 const inputFile = process.argv[2]
 const outputFile = process.argv[3]
-
 const svg = fs.readFileSync(inputFile, 'utf-8')
-
-const parser = require('parse5')
 const parsed = parser.parse(svg)
 // document -> html -> body -> svg
-const svgElement = parsed.childNodes[1].childNodes[1].childNodes[0]
+const svgElement = parsed.childNodes[0].childNodes[1].childNodes[0]
 
-const { getAttribute } = require('./svg')
 let width = getAttribute(svgElement, 'width')
 let height = getAttribute(svgElement, 'height')
 // remove px
